@@ -1,7 +1,7 @@
 # Draft: Include a file
 
 > **Important**:
-> This is a draft of a HXL feature, and not yet part of the official specification.
+> This is a draft of an HXL feature which is not yet part of the official specification
 
 ## Including a HXL file
 
