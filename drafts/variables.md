@@ -16,15 +16,7 @@ a: 45
 ````
 
 ````text
-define a: 45
-````
-
-````text
 var a: 45
-````
-
-````text
-var a 45
 ````
 
 ## Usage suggestions
@@ -32,4 +24,9 @@ var a 45
 ````text
 <NodeType> A
     key: *a
+````
+
+````text
+<NodeType> A
+    key: &[a]
 ````
