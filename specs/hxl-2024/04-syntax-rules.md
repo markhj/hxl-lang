@@ -292,6 +292,26 @@ Invalid:
   key: "Hello\nworld"
 ````
 
+## BOOL.001: Boolean notation
+
+Booleans MUST be written as ``true`` or ``false``, in lower-case letters.
+
+Valid:
+
+````text
+  bool_val: true
+````
+
+Invalid:
+
+````text
+  bool_val: 1
+````
+
+````text
+  bool_val: TRUE
+````
+
 ## INT.001: Integer notation
 
 Integer values MUST be given on the form ``x`` or ``-x``.
@@ -363,7 +383,7 @@ Invalid:
 
 Array values MUST be either string, integer or floating-point values.
 
-Nested arrays and references are NOT supported.
+Nested arrays, booleans and references are NOT supported.
 
 Error code: ``HXL_ARRAY_UNKNOWN_TYPE``
 

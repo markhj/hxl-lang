@@ -35,6 +35,7 @@ The data types listed below are currently supported.
 Please see the chapter on data types for more in-depth review.
 
 - Strings
+- Booleans
 - Integers
 - Floating-point values
 - Arrays

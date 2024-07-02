@@ -11,6 +11,16 @@ String values must be defined between quotation marks.
 
 Please reference the **Rules** section for behavior-specific definitions.
 
+## Boolean
+
+Boolean values are given as ``true`` or ``false``, written exactly
+like that, in lower-case.
+
+````text
+<Player> MainCharacter
+    has_helmet: true
+````
+
 ## Integer
 
 ````text
