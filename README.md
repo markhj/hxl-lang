@@ -16,7 +16,7 @@ For actual implementations, please refer to the list further down.
 
 There is currently only a single specification available.
 
-- [HXL.2024](https://github.com/markhj/hxl-lang/blob/master/specs/hxl-2024.md)
+- [HXL.2024](https://github.com/markhj/hxl-lang/tree/master/specs/hxl-2024)
 
 The rate at which new implementations will be defined is yet to be determined.
 
