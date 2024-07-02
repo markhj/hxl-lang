@@ -1,18 +1,33 @@
 # Syntax rules
 
-Each rule has their own section below.
+HXL standards enforce a strict syntax to ensure readability, streamlining
+and easy implementation of parsing.
+
+All syntax-related rules are listed on this page.
+
 Most rules must return an error code, when the criteria aren't met,
 and that will be listed as "Error code: ``HXL_ERROR_CODE``".
 
 > In implementations, it's recommended to reference the rule name (e.g. ``GEN.001``)
 > at the point where it is implemented, and as well in unit tests.
+> 
+> Example:
+> ````cpp
+> /**
+>  * Tests syntax rule GEN.001 (Empty source)
+>  */
+> void gen001_Test() {
+> 
+> }
+> ````
 
-Almost all the rules mentioned below should fit within the tokenization
-or grammar validation layer, of an implementation.
+Almost all the rules mentioned on this page should fit within the tokenization
+or grammar validation layer.
 
 ## GEN.001: No content
 
-There MUST be content in an HXL source. AT LEAST one (valid) node must be declared.
+There MUST be content in an HXL source. If nothing else, an empty line
+must be present.
 
 Error code: ``HXL_EMPTY``
 
