@@ -22,3 +22,8 @@ result, but from which child nodes can inherit properties.
 ## Rules
 
 - There can be only ONE abstract per node type
+
+## Name suggestions
+
+- Template
+- Abstract
