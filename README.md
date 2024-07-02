@@ -1,8 +1,7 @@
 ![Project Image](https://res.cloudinary.com/drfztvfdh/image/upload/v1719839840/Github/hxl-lang_snbmkt.jpg)
 
 **HXL** is a data interchange format like JSON or YAML. The syntax is somewhat YAML-like,
-but it sports of a number of features which are more dynamic in nature, such as variables
-and inheritance.
+but it sports a number of useful features such as references and inheritance.
 
 HXL was conceived while working on a game engine, but HXL's usefulness spoke to making
 it a project in its own right.
