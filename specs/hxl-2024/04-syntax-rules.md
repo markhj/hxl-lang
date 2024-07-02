@@ -58,6 +58,11 @@ The presence of ``\r`` is allowed in HXL sources, but MUST be completely ignored
 interpretation. Whenever we speak about "new line", it is ALWAYS and ONLY denoted
 by ``\n``.
 
+## GEN.004: Unexpected termination
+
+While scanning an HXL source, and the new-line character ``\n`` is encountered
+abruptly, provide error code: ``HXL_UNEXPECTED_TERMINATION``.
+
 ## NODE.001: Node type and name
 
 A node declaration requires a node type and a name, provided on the form: ``<Type> Name``
