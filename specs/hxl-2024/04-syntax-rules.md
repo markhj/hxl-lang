@@ -242,6 +242,40 @@ Valid:
 
 Names of nodes and properties are to be treated as case-sensitive, at all times.
 
+## NODE.014: Lines between nodes
+
+There MUST be exactly one empty line between nodes.
+
+Error code: ``HXL_ILLEGAL_WHITESPACE``
+
+Valid:
+
+````text
+<NodeType> A
+    key: "value"
+    
+<NodeType> B
+    key: "value"
+````
+
+Invalid:
+
+````text
+<NodeType> A
+    key: "value"
+<NodeType> B
+    key: "value"
+````
+
+````text
+<NodeType> A
+    key: "value"
+    
+    
+<NodeType> B
+    key: "value"
+````
+
 ## STR.001: Escaping characters
 
 Character escapes are preceded by backslash, for example ``\"``.
