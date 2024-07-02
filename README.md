@@ -1,5 +1,8 @@
 ![Project Image](https://res.cloudinary.com/drfztvfdh/image/upload/v1719839840/Github/hxl-lang_snbmkt.jpg)
 
+![GitHub Tag](https://img.shields.io/github/v/tag/markhj/hxl-lang?label=version)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 **HXL** is a data interchange format like JSON or YAML. The syntax is somewhat YAML-like,
 but it sports a number of useful features such as references and inheritance.
 
