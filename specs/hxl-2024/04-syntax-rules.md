@@ -296,6 +296,45 @@ Invalid:
     key: "value"
 ````
 
+## NODE.015: Whitespace after value
+
+Whitespace is NOT allowed after defining a value (unless when a comment
+``#`` succeeds the whitespace).
+
+Error code: ``HXL_ILLEGAL_WHITESPACE``
+
+Valid:
+
+````text
+    key: "value" # Comment
+````
+
+Invalid
+
+````text
+    key: "value"_
+````
+
+In the above, the ``_`` is used to visualize where the whitespace would be.
+
+## NODE.016: Empty values not permitted
+
+Empty values are not allowed. Instead, the property must be left out
+in its entirety.
+
+Error code: ``HXL_EMPTY_PROPERTY_VALUE``
+
+Invalid:
+
+````text
+<NodeType> A
+    key: 
+````
+
+> Note: Leaving out values may conflict in schema validation, if the property
+> is marked as required. But a requirement for a value serves as an argument
+> _for_ disallowing empty values.
+
 ## STR.001: Escaping characters
 
 Character escapes are preceded by backslash, for example ``\"``.
