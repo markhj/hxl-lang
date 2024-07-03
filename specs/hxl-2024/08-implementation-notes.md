@@ -15,20 +15,22 @@ Implementations should provide a schema which outlines:
 - (Optional) Default values for properties
 
 How the schema is defined and implemented can largely be done
-at the implementors own discretion.
+at the implementor's own discretion.
 
 ## Pipeline
 
 The recommended pipeline is:
 
 - Tokenization
-- Grammar validation
-- Pre-schema validation
+- Parsing
+- Deserialization
 - Schema validation
-- Deserialization (Translate to language-specific objects)
 
 Please note that this pipeline is a **suggestion**, and that ultimately
 you decide how to implement HXL.
+
+> Schema validation could be done prior to deserialization, but it's likely
+> easier and better decoupling to do it after.
 
 ### Tokenization
 
@@ -44,39 +46,40 @@ Example, in the following:
 
 It could be tokenized as:
 
-- ``<`` (Delimiter)
-- ``NodeType`` (Identifier)
-- ``>`` (Delimiter)
-- ``NodeName`` (Identifier)
-- ``<=`` (Delimiter)
-- ``ParentNode`` (Identifier)
+| Block          | Token type |
+|----------------|------------|
+| ``<``          | Delimiter  |
+| ``NodeType``   | Identifier |
+| ``>``          | Delimiter  |
+| `` ``          | Whitespace |
+| ``NodeName``   | Identifier |
+| `` ``          | Whitespace |
+| ``<=``         | Delimiter  |
+| `` ``          | Whitespace |
+| ``ParentNode`` | Identifier |
+| ``\n``         | New-line   |
 
-### Grammar validation
+It's recommended to tokenize whitespace characters such as space,
+new-line and tabulation, because it's relevant for validating
+a number of syntax rules.
 
-Some grammar validation can be done in the tokenization phase, but it's
-recommended to fit as much of it as possible into a second layer, where
-"check the grammar".
+### Parsing
 
-In the **grammar validation** you verify the order the tokens are provided
-in. Building on the example above, we would expect an identifier to follow
-the ``<`` delimiter. If that isn't the case, we encounter "an unexpected token."
+The parser primarily carries two responsibilities:
 
-### Semantic validation
+- Verify the grammar (i.e. the order tokens are provided in)
+- Sort the tokens into a hierarchical tree structure, which can be consumed
+  by the deserializer.
 
-In the **semantic validation**, you verify structures prior to using the
-schema. This, among other things, include checking if node references
-exist, if their names are unique, etc.
-
-### Schema validation
-
-In the **schema validation** stage, you hold the structure up
-against the schema. Here you verify that node types are correct, that
-required properties exist, that unrecognized properties are caught, etc.
+You could also carry out a great deal of semantic validation, while parsing,
+such as verifying that arrays have matching value types, or verify that
+referenced nodes exist.
 
 ### Deserialization
 
-In the final stage, **deserialization**, you translate the data to
+In the **deserialization** stage, you translate the parser tree to
 language-specific structures. This could be structs, classes or something else.
+The best choice of structure is language specific; and sometimes use-case specific.
 
 #### C++ example
 
@@ -91,7 +94,11 @@ struct NodeType {
 }
 ````
 
-And then producing structs with the populated data.
+### Schema validation
+
+In the **schema validation** stage, you hold the deserialized structures up
+against the schema. Here, you verify that node types are correct, that
+required properties exist, that unrecognized properties are caught, etc.
 
 ## Forward- and backward-compatible specifications
 
