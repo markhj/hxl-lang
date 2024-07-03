@@ -23,6 +23,7 @@ The recommended pipeline is:
 
 - Tokenization
 - Parsing
+- Semantic validation
 - Deserialization
 - Schema validation
 
@@ -71,15 +72,26 @@ The parser primarily carries two responsibilities:
 - Sort the tokens into a hierarchical tree structure, which can be consumed
   by the deserializer.
 
-You could also carry out a great deal of semantic validation, while parsing,
-such as verifying that arrays have matching value types, or verify that
-referenced nodes exist.
+The parser is responsible for some validation, but still at a
+somewhat "local" and primitive state. It can raise errors, for instance
+when a set of tokens are in an illogical order. But should _not_ 
+verify that referenced nodes exist, for instance.
+
+### Semantic validation
+
+The next recommended phase is **semantic validation**.
+
+In this phase, we traverse the parse tree, and perform "higher level"
+validation.
+
+Among other things, we want to check that array values are of identical
+types, and that referenced nodes exist.
 
 ### Deserialization
 
 In the **deserialization** stage, you translate the parser tree to
 language-specific structures. This could be structs, classes or something else.
-The best choice of structure is language specific; and sometimes use-case specific.
+The best choice of structure depends on language and sometimes use-case.
 
 #### C++ example
 
