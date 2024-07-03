@@ -75,9 +75,9 @@ Valid example:
 <Player> MainCharacter
 ````
 
-## NODE.002:
+## NODE.002: Whitespace between node type and name
 
-There MUST be a single whitespace (``\s``) between the node type and its name.
+There MUST be EXACTLY one whitespace (``\s``) between the node type and its name.
 
 Error code: ``HXL_ILLEGAL_WHITESPACE``
 
