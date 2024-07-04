@@ -57,6 +57,25 @@ Invalid:
     # required_property not declared
 ````
 
+## SCHEMA.521: Required inherited properties
+
+Ensure that your schema validation doesn't strike required properties
+which are implicit on a node.
+
+Example:
+
+Assuming that ``a`` is a **_required_** property for ``NodeType``:
+
+````text
+<NodeType> A
+    a: 10
+    
+<NodeType> B
+````
+
+Node ``B`` must NOT get struck by the schema validator for not having
+the required property present.
+
 ## SCHEMA.522: Unrecognized property
 
 A property NOT found in the schema provided as node property.
