@@ -229,7 +229,7 @@ Invalid:
 
 A node name must satisfy: ``([A-Z][a-zA-Z0-9]*)``
 
-Error code: ``HXL_INVALID_NODE_NAME``
+Error code: ``HXL_INVALID_NODE_NAME`` or ``HXL_SYNTAX_ERROR``
 
 Valid:
 
@@ -247,7 +247,7 @@ Invalid:
 
 Property keys must satisfy: ``[a-z][a-z_]*``
 
-Error code: ``HXL_INVALID_PROPERTY_KEY``
+Error code: ``HXL_INVALID_PROPERTY_KEY`` or ``HXL_SYNTAX_ERROR``
 
 Valid:
 
