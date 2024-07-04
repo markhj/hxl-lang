@@ -216,6 +216,22 @@ Invalid:
 > make a design decision whether first or last declaration would take effect.
 > Having duplicate node property names MUST be considered illegal.
 
+## STR.200: Empty strings
+
+Empty strings are allowed, given that quotation marks are provided.
+
+Valid:
+
+````text
+    key[] = ""
+````
+
+Invalid:
+
+````text
+    key[] = 
+````
+
 ## ARR.200: Mixed types in arrays
 
 Arrays values MUST be of identical type.
@@ -244,4 +260,20 @@ Invalid:
 
 ````text
   arr[] = { "Hello", 2, 3 }
+````
+
+## ARR.201: Empty arrays
+
+Empty arrays are allowed, as long as they are correctly formed.
+
+Valid:
+
+````text
+    key[] = { }
+````
+
+Invalid:
+
+````text
+    key[] = {}
 ````
