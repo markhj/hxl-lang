@@ -335,6 +335,36 @@ Invalid:
 > is marked as required. But a requirement for a value serves as an argument
 > _for_ disallowing empty values.
 
+## NODE.017: Property declaration outside node
+
+Node properties MUST be declared below a node declaration.
+
+No empty lines can exist between a property and its parent node.
+
+Error code: ``HXL_ORPHAN_PROPERTY``
+
+Valid:
+
+````text
+<NodeType> A
+    key: 5
+````
+
+Invalid:
+
+````text
+<NodeType> A
+    
+    key: 5
+````
+
+````text
+    key: 5
+    
+<NodeType> A
+    prop: 10
+````
+
 ## STR.001: Escaping characters
 
 Character escapes are preceded by backslash, for example ``\"``.
