@@ -24,14 +24,13 @@ The recommended pipeline is:
 - Tokenization
 - Parsing
 - Semantic validation
-- Deserialization
-- Schema validation
+- Deserialization | Schema validation
 
 Please note that this pipeline is a **suggestion**, and that ultimately
 you decide how to implement HXL.
 
-> Schema validation could be done prior to deserialization, but it's likely
-> easier and better decoupling to do it after.
+> Schema validation could be done before or after deserialization.
+> This is implementation-dependent.
 
 ### Tokenization
 
@@ -108,7 +107,7 @@ struct NodeType {
 
 ### Schema validation
 
-In the **schema validation** stage, you hold the deserialized structures up
+In the **schema validation** stage, you hold the structures up
 against the schema. Here, you verify that node types are correct, that
 required properties exist, that unrecognized properties are caught, etc.
 
