@@ -209,9 +209,9 @@ Invalid:
 
 ## NODE.010: Node type format
 
-Node type format must satisfy: ``([A-Z][a-z0-9]+){1,}``
+Node type format must satisfy: ``([A-Z][a-z0-9]*){1,}``
 
-Error code: ``HXL_INVALID_NODE_TYPE``
+Error code: ``HXL_INVALID_NODE_TYPE`` or ``HXL_SYNTAX_ERROR``
 
 Valid:
 
@@ -227,7 +227,7 @@ Invalid:
 
 ## NODE.011: Node name format
 
-A node name must satisfy: ``([A-Z][a-zA-Z0-9]+)``
+A node name must satisfy: ``([A-Z][a-zA-Z0-9]*)``
 
 Error code: ``HXL_INVALID_NODE_NAME``
 
@@ -245,7 +245,7 @@ Invalid:
 
 ## NODE.012: Property name format
 
-Property keys must satisfy: ``[a-z][a-z_]+``
+Property keys must satisfy: ``[a-z][a-z_]*``
 
 Error code: ``HXL_INVALID_PROPERTY_KEY``
 

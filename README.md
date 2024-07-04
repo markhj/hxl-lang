@@ -22,9 +22,11 @@ The rate at which new implementations will be defined is yet to be determined.
 
 ## 🌿 Implementations
 
-| Language | HXL spec. | Min. version | Repository                             |
-|----------|-----------|--------------|----------------------------------------|
-| C++      | 2024.1    | C++20        | https://github.com/markhj/cpp-hxl-lang |
+| Language | HXL specs. | Min. version | Repository                             |
+|----------|------------|--------------|----------------------------------------|
+| C++      | 2024.1     | C++20*       | https://github.com/markhj/cpp-hxl-lang |
+
+*) There are plans to reduce to ``C++17``
 
 ## 💝 Contribute
 
