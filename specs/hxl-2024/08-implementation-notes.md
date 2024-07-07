@@ -105,6 +105,9 @@ struct NodeType {
 }
 ````
 
+Optionally, your implementation can throw the error ``HXL_CANNOT_DESERIALIZE_NODE``
+if there's a missing implementation for a specific node type.
+
 ### Schema validation
 
 In the **schema validation** stage, you hold the structures up
