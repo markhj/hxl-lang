@@ -223,13 +223,13 @@ Empty strings are allowed, given that quotation marks are provided.
 Valid:
 
 ````text
-    key[] = ""
+    key = ""
 ````
 
 Invalid:
 
 ````text
-    key[] = 
+    key = 
 ````
 
 ## ARR.200: Mixed types in arrays
