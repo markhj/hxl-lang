@@ -39,3 +39,4 @@ It is **not** related to the rule identifiers (e.g. ``GEN.001`` or ``NODE.106``)
 | ``HXL_ILLEGAL_DATA_TYPE``           | ``830``    | Schema expects one data type, but another is provided.                                                                                                            |
 | ``HXL_REQUIRED_PROPERTY_NOT_FOUND`` | ``900``    | A property required in the schema is not found on the node.                                                                                                       |
 | ``HXL_UNKNOWN_PROPERTY``            | ``910``    | A property not declared in the schema is found on the node.                                                                                                       |
+| ``HXL_CANNOT_DESERIALIZE_NODE``     | ``1000``   | (Optional) If a deserializer is missing instructions for a specific node.                                                                                         |

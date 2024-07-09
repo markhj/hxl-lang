@@ -63,6 +63,17 @@ by ``\n``.
 While scanning an HXL source, and the new-line character ``\n`` is encountered
 abruptly, provide error code: ``HXL_UNEXPECTED_TERMINATION``.
 
+## GEN.005: Four spaces for indentation
+
+It's permitted that a source contains EXACTLY four ``\s`` characters at
+the beginning of a line. But this must be treated equally to as if it were
+a single tab ``\t``.
+
+The indentation MUST be exactly 4 characters.
+
+> Suggestion: For an implementation, it could make sense to convert
+> the four ``\s`` to a ``\t`` prior to tokenization.
+
 ## NODE.001: Node type and name
 
 A node declaration requires a node type and a name, provided on the form: ``<Type> Name``
