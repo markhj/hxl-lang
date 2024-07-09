@@ -1,6 +1,6 @@
-# Changes confirmed for ``HXL2025.1``
+# Changes confirmed for ``HXL2025``
 
-This document details features and changes for ``HXL2025.1``.
+This document details features and changes for ``HXL2025``.
 Note that at this stage features and changes have been confirmed
 to be included, but they are not yet formalized. In other words,
 you cannot yet trust that the syntax and behavior described are
@@ -22,13 +22,11 @@ what you'll see in the final specification.
 - Values must be written in all upper-case to be valid.
 - The schema specifies enumerator values.
 
-### Reference properties
+### Inherit properties
 
-A node property can reference another property (of exactly same type).
+A node property can inherit another property (of exactly same type).
 During transformation stage the node property will be physically replaced
 by the referenced value.
-
-In other words, it works a bit different from node references.
 
 Suggested syntax:
 
@@ -37,7 +35,7 @@ Suggested syntax:
     key: value
     
 <AnotherType> B
-    other&: a.key
+    other: <= a.key
 ````
 
 #### Rules and behavior
