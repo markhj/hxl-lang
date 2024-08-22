@@ -592,6 +592,31 @@ Invalid:
   key: "value" #
 ````
 
+## CMT.004: Stand-alone comments and whitespace
+
+Stand-alone comments (i.e. lines with only comment) MUST NOT
+have whitespace prior to the ``#``.
+
+But they MUST have whitespace after ``#``.
+
+Error: ``HXL_ILLEGAL_COMMENT``
+
+Valid:
+
+````text
+# Comment here
+````
+
+Invalid:
+
+````text
+ # Comment here
+````
+
+````text
+#Comment here
+````
+
 ## INHR.001: Whitespace around ``<=``
 
 There MUST be exactly ONE whitespace character (``\s``) on each side of the ``<=`` token.
