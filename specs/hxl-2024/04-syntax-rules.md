@@ -198,26 +198,6 @@ string literal (comment)
 In the case of string literals, the value is everything scanned between
 two non-escaped quotation marks.
 
-A comment is allowed after the value. But if there is no comment,
-an ``HXL_ILLEGAL_WHITESPACE`` error must be raised.
-
-## NODE.009: Whitespace between end-of-string and comment
-
-EXACTLY one whitespace (``\s``) must be placed between the end-of-string quotation mark
-and the beginning of a comment.
-
-Valid:
-
-````text
-  key: "value" # Comment
-````
-
-Invalid:
-
-````text
-  key: "value"# Comment
-````
-
 ## NODE.010: Node type format
 
 Node type format must satisfy: ``([A-Z][a-z0-9]*){1,}``
