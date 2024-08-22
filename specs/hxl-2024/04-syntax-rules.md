@@ -78,8 +78,6 @@ The indentation MUST be exactly 4 characters.
 
 A node declaration requires a node type and a name, provided on the form: ``<Type> Name``
 
-Error code: ``HXL_INVALID_NODE_FORM``
-
 Valid example:
 
 ````text
