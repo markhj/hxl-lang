@@ -389,7 +389,7 @@ That means in the following:
 
 That the value is ``Hello : World``.
 
-## STR.004: ``\n`` within string literal
+## STR.004: ``\n`` within string literal is illegal
 
 New-line ``\n`` is NOT allowed within a string literal.
 
