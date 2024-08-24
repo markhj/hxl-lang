@@ -78,8 +78,6 @@ The indentation MUST be exactly 4 characters.
 
 A node declaration requires a node type and a name, provided on the form: ``<Type> Name``
 
-Error code: ``HXL_INVALID_NODE_FORM``
-
 Valid example:
 
 ````text
@@ -197,26 +195,6 @@ string literal (comment)
 
 In the case of string literals, the value is everything scanned between
 two non-escaped quotation marks.
-
-A comment is allowed after the value. But if there is no comment,
-an ``HXL_ILLEGAL_WHITESPACE`` error must be raised.
-
-## NODE.009: Whitespace between end-of-string and comment
-
-EXACTLY one whitespace (``\s``) must be placed between the end-of-string quotation mark
-and the beginning of a comment.
-
-Valid:
-
-````text
-  key: "value" # Comment
-````
-
-Invalid:
-
-````text
-  key: "value"# Comment
-````
 
 ## NODE.010: Node type format
 
@@ -409,7 +387,7 @@ That means in the following:
 
 That the value is ``Hello : World``.
 
-## STR.004: ``\n`` within string literal
+## STR.004: ``\n`` within string literal is illegal
 
 New-line ``\n`` is NOT allowed within a string literal.
 
