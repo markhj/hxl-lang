@@ -62,3 +62,44 @@ Suggested syntax:
 #### Rules and behavior
 
 - A template node type must match the inheriting node type
+
+### Nested properties
+
+More complex objects require trees of properties.
+
+````text
+<Node> A
+    position:
+        x: 50.0
+        y: 15.0
+        z: -25.5
+````
+
+### Array values on separate lines
+
+Array values can be written on multiple lines.
+
+````text
+<Node> A
+    names[]:
+        "John"
+        "Jane"
+        "Doe"
+````
+
+#### Rules and behavior
+
+There must be one value per line.
+
+Line breaks and empty lines are not allowed.
+
+### Text on multiple lines
+
+Text can be written on multiple lines.
+
+````text
+<Node> A
+    text:
+        This is a long text
+        spread across multiple lines
+````
